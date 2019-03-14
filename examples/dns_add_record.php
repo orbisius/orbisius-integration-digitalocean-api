@@ -17,8 +17,8 @@ $create_dns_records_params = [
     'data' => 'some_test_data',
 ];
 
-// List DNS records for example.com
-$res_arr = $digital_ocean_api->create('/domains/exampe.com/records', $create_dns_records_params);
+// Create a DNS record for example.com
+$res_arr = $digital_ocean_api->create('/domains/example.com/records', $create_dns_records_params);
 var_export($res_arr);
 
 // Result
