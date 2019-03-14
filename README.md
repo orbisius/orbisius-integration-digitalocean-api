@@ -29,17 +29,17 @@ Feel free to check the examples folder. You will need to update config.php with 
 
 // You can pass multiple parameters to the constructor
 $do_api_params = [
-	'token' => ORBISIUS_DO_INTEGRATION_API_TOKEN,
+	'token' => ORBISIUS_DO_INTEGRATION_API_TOKEN, // this is php const defined in config.php of the project.
 	'debug' => 1, // 0 or 1, default not set
 	'verify_ssl' => 0, // disables SSL verification of the SSL of DigitalOdean, default: checks for SSL
 	'email' => '', // in case DigitalOcean needs to get in touch
 ];
-`
+```
 
 
 ```php
 
-// Each method in the class will return this array.
+// Each method in the class will return this array. Check each example file as it contains sample API output.
 array (
   'msg' => '',
   'status' => false,
@@ -47,8 +47,7 @@ array (
   array (
   ),
 )
-`
-
+```
 
 
 Consultation & Customizations (Paid)
