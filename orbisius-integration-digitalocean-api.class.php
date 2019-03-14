@@ -98,7 +98,7 @@ class Orbisius_Integration_DigitalOcean_API {
 
         // Good practice to let people know who's accessing their servers.
         // See https://en.wikipedia.org/wiki/User_agent
-        $email = empty($this->params['email']) ? 'n/a' : empty($this->params['email'];
+        $email = empty($this->params['email']) ? 'n/a' : $this->params['email'];
         curl_setopt($ch, CURLOPT_USERAGENT, sprintf('Orbisius_DigitalOcean_Integration/1.0 (email: %s)', $email));
 
         curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
