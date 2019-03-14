@@ -26,7 +26,6 @@ Feel free to check the examples folder. You will need to update config.php with 
 
 
 ```php
-
 // You can pass multiple parameters to the constructor
 $do_api_params = [
 	'token' => ORBISIUS_DO_INTEGRATION_API_TOKEN, // this is php const defined in config.php of the project.
@@ -36,10 +35,9 @@ $do_api_params = [
 ];
 ```
 
+Each method call returns an array. Check each example file as it contains sample API output.
 
 ```php
-
-// Each method in the class will return this array. Check each example file as it contains sample API output.
 array (
   'msg' => '',
   'status' => false,
