@@ -14,12 +14,15 @@ Usage
 
 requirements: php v5.4+ with php_curl extension installed
 
-Generate a token one from https://cloud.digitalocean.com/account/api/tokens
-Load the orbisius-integration-digitalocean-api.class.php file.
-Pass the API token & your email.
-Have a coffee/beer.
+The steps are:
 
-Check the example.php file.
+1. Generate a token one from https://cloud.digitalocean.com/account/api/tokens
+2. Load the orbisius-integration-digitalocean-api.class.php file.
+3. Pass the API token & your email to the constructor.
+4. Make the call to the API.
+5. Are you feeling generous? [Buy me a beer or coffee then](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SS49ABSAHMMPG). This really keeps me going ;) 
+
+Feel free to check the examples folder. You will need to update config.php with your API token.
 
 
 Consultation & Customizations (Paid)
