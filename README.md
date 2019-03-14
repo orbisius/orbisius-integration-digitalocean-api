@@ -25,6 +25,32 @@ The steps are:
 Feel free to check the examples folder. You will need to update config.php with your API token.
 
 
+```php
+
+// You can pass multiple parameters to the constructor
+$do_api_params = [
+	'token' => ORBISIUS_DO_INTEGRATION_API_TOKEN,
+	'debug' => 1, // 0 or 1, default not set
+	'verify_ssl' => 0, // disables SSL verification of the SSL of DigitalOdean, default: checks for SSL
+	'email' => '', // in case DigitalOcean needs to get in touch
+];
+`
+
+
+```php
+
+// Each method in the class will return this array.
+array (
+  'msg' => '',
+  'status' => false,
+  'data' =>
+  array (
+  ),
+)
+`
+
+
+
 Consultation & Customizations (Paid)
 ------------------------------------
 
