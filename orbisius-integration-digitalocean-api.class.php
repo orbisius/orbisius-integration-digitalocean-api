@@ -25,6 +25,12 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 class Orbisius_Integration_DigitalOcean_API {
+	private $ver = '1.0.1';
+	const REC_TYPE_A = 'A';
+	const REC_TYPE_MX = 'MX';
+	const REC_TYPE_TXT = 'TXT';
+	const REC_TYPE_CNAME = 'CNAME';
+
     private $api_token = '';
     private $api_base_url = 'https://api.digitalocean.com/v2';
     private $params = [];
@@ -101,6 +107,7 @@ class Orbisius_Integration_DigitalOcean_API {
         $email = empty($this->params['email']) ? 'n/a' : $this->params['email'];
         curl_setopt($ch, CURLOPT_USERAGENT, sprintf('Orbisius_DigitalOcean_Integration/1.0 (email: %s)', $email));
 
+        // Set timeouts
         curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $connect_timeout);
 
