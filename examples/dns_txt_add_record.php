@@ -12,7 +12,7 @@ $digital_ocean_api = new Orbisius_Integration_DigitalOcean_API($do_api_params);
 
 // https://developers.digitalocean.com/documentation/v2/#create-a-new-domain-record
 $create_dns_records_params = [
-    'type' => 'TXT',
+    'type' => Orbisius_Integration_DigitalOcean_API::REC_TYPE_TXT,
     'name' => 'some-text-record',
     'data' => 'some_test_data',
 ];
