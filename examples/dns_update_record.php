@@ -12,7 +12,7 @@ $digital_ocean_api = new Orbisius_Integration_DigitalOcean_API($do_api_params);
 
 // Update a DNS record for example.com
 $update_dns_record_params = [
-	'type' => 'TXT',
+	'type' => Orbisius_Integration_DigitalOcean_API::REC_TYPE_TXT,
 	'name' => 'some-text-record',
 	'data' => 'some_more_test_data',
 ];
