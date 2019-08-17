@@ -22,7 +22,7 @@ The steps are:
 4. Make the call to the API.
 5. Are you feeling generous? [Buy me a beer or coffee then](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SS49ABSAHMMPG). This really keeps me going ;) 
 
-Feel free to check the examples folder. You will need to update config.php with your API token.
+Feel free to check the *examples/* folder. You will need to update config.php with your API token.
 
 
 ```php
