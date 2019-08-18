@@ -62,7 +62,7 @@ If you like this software and/or want it adapted for your busines needs let us k
 License
 -------
 
-DigitalOceanV2 is released under the MIT License. See the bundled
+This project is released under the MIT License. See the bundled
 [LICENSE](https://github.com/orbisius/orbisius-integration-digitalocean-api/blob/master/LICENSE) file for details.
 
 
