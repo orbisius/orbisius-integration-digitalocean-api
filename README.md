@@ -18,7 +18,7 @@ The steps are:
 
 1. Generate a token one from https://cloud.digitalocean.com/account/api/tokens
 2. Load the orbisius-integration-digitalocean-api.class.php file.
-3. Pass the API token & your email to the constructor.
+3. Pass the API token & your email to the constructor or using ORBISIUS_DO_INTEGRATION_API_TOKEN environment variable.
 4. Make the call to the API.
 5. Are you feeling generous? [Buy me a beer or coffee then](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SS49ABSAHMMPG). This really keeps me going ;) 
 
