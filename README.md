@@ -48,6 +48,9 @@ array (
 ```
 
 
+The cacert.pem was downloaded from
+https://curl.haxx.se/docs/caextract.html
+
 Consultation & Customizations (Paid)
 ------------------------------------
 
