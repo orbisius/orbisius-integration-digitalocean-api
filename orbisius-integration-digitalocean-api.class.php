@@ -125,11 +125,20 @@ class Orbisius_Integration_DigitalOcean_API {
 		curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
 		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $connect_timeout);
 
+		// https://stackoverflow.com/questions/731117/error-using-php-curl-with-ssl-certificates
+		$default_ca_cert_file = __DIR__ . '/cacert.pem';
+
 		// Does the user want to turn off SSL certificate verification?
 		// verify_ssl => 0,
 		if (isset($this->params['verify_ssl']) && empty($this->params['verify_ssl'])) {
 			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+		} elseif (!empty($this->params['ca_cert_file'])) {
+			curl_setopt($ch, CURLOPT_CAINFO, $this->params['ca_cert_file']);
+			curl_setopt($ch, CURLOPT_CAPATH, $this->params['ca_cert_file']);
+		} elseif (file_exists($default_ca_cert_file)) {
+			curl_setopt($ch, CURLOPT_CAINFO, $default_ca_cert_file);
+			curl_setopt($ch, CURLOPT_CAPATH, $default_ca_cert_file);
 		}
 
 		if (!empty($req_params)) {
@@ -156,8 +165,11 @@ class Orbisius_Integration_DigitalOcean_API {
 		$body = substr($buffer, $header_size);
 		$body = trim($body);
 
+		// https://www.php.net/manual/en/function.json-decode.php
+		$flags = JSON_BIGINT_AS_STRING; // so there's no problem with numbers
+
 		$res_arr['data']['raw_headers'] = trim($header);
-		$res_arr['data'] = empty($body) ? [] : json_decode($body, true);
+		$res_arr['data'] = empty($body) ? [] : json_decode($body, true, $depth = 512, $flags);
 
 		if (!empty($this->params['debug'])) { //  || empty($res_arr['status'])
 			$info = curl_getinfo($ch);
